@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蓝牙教程</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container">
+        <span class="cursor"></span>
+        <div class="animation">
+            <div class="page page1">
+                <img src="./img/one-en.png" alt="">
+            </div>
+
+            <div class="page page2">
+                <img src="./img/two-en.png" alt="">
+            </div>
+
+            <div class="page page3">
+                <img src="./img/three-en.jpg" alt="">
+            </div>
+            <div class="page page4">
+                <img src="./img/four-en.jpg" alt="">
+            </div>
+            <div class="page page5">
+                <img src="./img/five-en.jpg" alt="">
+            </div>
+            <div class="page page6">
+                <img src="./img/six-en.jpg" alt="">
+            </div>
+            <div class="page page7">
+                <img src="./img/seven-en.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+        var lang = "en";
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                return unescape(r[2]);
+            }
+            return null;
+        };
+        lang = getQueryString("lang") ? getQueryString("lang") : lang;
+        var imgs = document.getElementsByTagName("img");
+        if(lang == 'zh') {
+            for(var i = 0; i < imgs.length; i++) {
+                imgs[i].src = imgs[i].src.replace("-en", "-zh");
+            }
+        }
+    </script>
+</body>
+</html>
